@@ -507,7 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 8064845883261106608, guid: 08e161da28ccffa469be0d71f116eec7, type: 3}
-  maxNumber: 1
+  maxNumber: 10
   distanceRange: {x: 16, y: 18}
   spawnPeriod: 1
 --- !u!4 &112347374
