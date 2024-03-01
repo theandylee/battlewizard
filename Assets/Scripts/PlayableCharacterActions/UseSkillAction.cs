@@ -33,10 +33,14 @@ public class UseSkillAction : PlayableCharacterAction
         var projectileInstance = Pool.Instance.Spawn(selectedSkill.Prefab, projectileSpawnPoint.position);
 
         if (targetingSystem.NearestTarget != null)
-            projectileInstance.transform.LookAt(targetingSystem.NearestTarget.worldCenterOfMass);
+        {
+            projectileInstance.transform.LookAt(targetingSystem.NearestTarget.TargetPosition);
+        }
         else
+        {
             projectileInstance.transform.rotation = transform.rotation;
-        
+        }
+
         StartCooldown(selectedSkill);
     }
 

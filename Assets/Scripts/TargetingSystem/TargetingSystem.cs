@@ -3,20 +3,31 @@ using UnityEngine;
 
 public class TargetingSystem : MonoBehaviour
 {
-    public Rigidbody NearestTarget { get; private set; }
+    public Target NearestTarget { get; private set; }
 
-    private readonly List<Rigidbody> _targets = new();
+    private readonly List<Target> _targets = new();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_targets.Contains(other.attachedRigidbody)) return;
+        if (!other.TryGetComponent<Target>(out var target)) return;
 
-        _targets.Add(other.attachedRigidbody);
+        if (_targets.Contains(target)) return;
+
+        target.TargetingSystem = this;
+        _targets.Add(target);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _targets.Remove(other.attachedRigidbody);
+        if (!other.TryGetComponent<Target>(out var target)) return;
+
+        target.TargetingSystem = null;
+        _targets.Remove(target);
+    }
+
+    public void RemoveTarget(Target target)
+    {
+        _targets.Remove(target);
     }
 
     private void Update()
@@ -29,11 +40,11 @@ public class TargetingSystem : MonoBehaviour
         var selfPosition = transform.position;
 
         var minDistance = float.MaxValue;
-        Rigidbody target = null;
+        Target target = null;
 
         foreach (var targetRigidBody in _targets)
         {
-            var distance = Vector3.Distance(selfPosition, targetRigidBody.worldCenterOfMass);
+            var distance = Vector3.Distance(selfPosition, targetRigidBody.TargetPosition);
             if (!(distance < minDistance)) continue;
 
             minDistance = distance;

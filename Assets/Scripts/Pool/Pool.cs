@@ -20,7 +20,7 @@ public class Pool
     public GameObject Spawn(GameObject prefab, Vector3 position = default, Quaternion rotation = default)
     {
         if (prefab == null) return null;
-        
+
         var originalId = prefab.GetInstanceID();
 
         if (!_stacks.TryGetValue(originalId, out var stack))
@@ -37,9 +37,9 @@ public class Pool
 
         instance.transform.position = position;
         instance.transform.rotation = rotation;
-        
+
         instance.SetActive(true);
-        
+
         return instance;
     }
 

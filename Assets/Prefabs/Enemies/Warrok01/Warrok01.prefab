@@ -132,6 +132,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 3.11
       objectReference: {fileID: 0}
+    - target: {fileID: 4997171758243388713, guid: c75a8ba5d22334741ac6eafb698c5829,
+        type: 3}
+      propertyPath: offset.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671310319527022650, guid: c75a8ba5d22334741ac6eafb698c5829,
+        type: 3}
+      propertyPath: m_CenterOfMass.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8452015114462906923, guid: c75a8ba5d22334741ac6eafb698c5829,
         type: 3}
       propertyPath: period

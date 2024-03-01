@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1936683488070731121}
   - component: {fileID: 6374860035332785045}
   - component: {fileID: 5401474921022844836}
-  - component: {fileID: 8452015114462906923}
+  - component: {fileID: 4997171758243388713}
   m_Layer: 7
   m_Name: ParentEnemy
   m_TagString: Untagged
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFxPrefab: {fileID: 0}
---- !u!114 &8452015114462906923
+--- !u!114 &4997171758243388713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,16 +151,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1424862984666855204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d793350751fb2418cd1dc90d3e13c1, type: 3}
+  m_Script: {fileID: 11500000, guid: ded5bc5b69e64314cada4af100949a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  damageData:
-    value: 0
-    damageType: 0
-  period: 0
 --- !u!1 &4670427635821998629
 GameObject:
   m_ObjectHideFlags: 0
