@@ -57,7 +57,12 @@ public class TouchDamager : MonoBehaviour
             _damageTimers[i] = damageTimer;
         }
     }
-    
+
+    private void OnDisable()
+    {
+        _damageTimers.Clear();
+    }
+
     private struct DamageTimer
     {
         public float timer;
