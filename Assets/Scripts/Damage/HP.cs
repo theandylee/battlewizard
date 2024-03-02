@@ -38,6 +38,7 @@ public class HP : MonoBehaviour, IDamageReceiver, INeedStats
     
     private void OnEnable()
     {
+        IsDead = false;
         SetHpToMax();
     }
 
